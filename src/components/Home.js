@@ -13,7 +13,7 @@ const Home = (props) => {
 
       <Link to="/userProfile">User Profile</Link>
 
-      <AccountBalance accountBalance={props.accountBalance} />
+      {/* <AccountBalance accountBalance={props.accountBalance} /> */}
     </div>
   );
 };

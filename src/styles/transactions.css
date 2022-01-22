@@ -15,4 +15,11 @@
     background-color: #343435;
     height: 100vh;
     color: snow;
+    display: flex;
+}
+
+.balance{
+    margin-top: 7px;
+    margin-left: 20px;
+    margin-right: 120px;
 }

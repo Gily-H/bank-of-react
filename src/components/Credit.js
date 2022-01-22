@@ -17,8 +17,10 @@ const Credit = (props) =>{
 
     return(
         <div className='transactionPage'>
-            <h1 className='heading'>Credit transactions</h1>
-            {ren}
+            <div>
+                <h1 className='heading'>Credit transactions</h1>
+                {ren}
+            </div>
         </div>
     )
 }
