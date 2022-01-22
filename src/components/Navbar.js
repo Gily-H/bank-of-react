@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -6,25 +7,12 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="logo-container">
         <i className="fas fa-landmark"></i>
-        <h1>Bank Of React</h1>
+        <h1 className="heading">Bank Of React</h1>
+        <Link className="accountLink link" to="/">Account</Link>
+        <Link className="debitLink link" to="/Debit">Debit</Link>
+        <Link className="creditLink link" to="/Credit">Credit</Link>
+        <Link className="aboutLink link" to="/">About Us</Link>
       </div>
-      <ul className="nav-links">
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Accounts</a>
-        </li>
-        <li>
-          <a href="#">Debit</a>
-        </li>
-        <li>
-          <a href="#">Credit</a>
-        </li>
-        <li>
-          <a href="#">About Us</a>
-        </li>
-      </ul>
     </nav>
   );
 };

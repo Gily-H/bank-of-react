@@ -28,7 +28,7 @@ const LogIn = (props) =>{
 
     return (
         <>
-        {user.redirect ==true  ? <Redirect to="userProfile"/> : 
+        {user.redirect ? <Redirect to="userProfile"/> : 
 
         <div>
         <form onSubmit={handleSubmit}>

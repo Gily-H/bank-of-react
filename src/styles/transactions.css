@@ -1,0 +1,18 @@
+/* This is the div containing each individual transaction */
+.transaction{
+    margin: 10px;
+    margin-left: 30px;
+}
+
+.heading{
+    margin-top: 5px;
+    margin-left: 20px;
+    text-decoration: underline;
+}
+
+.transactionPage{
+    margin: 0;
+    background-color: #343435;
+    height: 100vh;
+    color: snow;
+}
