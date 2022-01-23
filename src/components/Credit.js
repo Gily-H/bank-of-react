@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/transactions.css";
-import AccountBalance from "./AccountBalance";
 import { nanoid } from "nanoid";
 
 const Credit = (props) =>{
@@ -19,7 +18,7 @@ const Credit = (props) =>{
     const ren = props.credit.map(data => (
     <div className='transaction'>
         <p><strong>{data.description}</strong></p>
-        <p>{`Spent: $${data.amount}`}</p>
+        <p>{`Spent: $${Number(data.amount).toFixed(2)}`}</p>
         <p>{"Purchased on: "+ dateFix(data.date)}</p> 
     </div>
     ));
@@ -45,12 +44,8 @@ const Credit = (props) =>{
 
     return(
         <div className='transactionPage'>
-            <div className="balance">
-                <AccountBalance balance={props.balance} />
-
                 <div className="transactionForm">
                     <h1>Add Transaction</h1>
-                    
                     <form className="transaction-form" onSubmit={formSubmit}>
                         <label>Description of purchase: </label>
                         <input placeholder="..." name="description" type="text" value={formValues.description} onChange={onChange}/>
@@ -63,7 +58,6 @@ const Credit = (props) =>{
                         <br/>
                         <button>Add Transaction</button>
                     </form>
-                </div>
             </div>
 
 

@@ -1,0 +1,29 @@
+.login {
+    display: grid;
+    margin: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.login h1{
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login form input{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(5, 128, 5, 0.9);
+    margin-bottom: 5px;
+    border: none;
+}
+
+.login form button{
+    background-color:rgba(5, 128, 5, 0.9);
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+

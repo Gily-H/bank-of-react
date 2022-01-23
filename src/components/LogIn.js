@@ -1,5 +1,6 @@
 import { Navigate, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import "../styles/login.css";
 
 const LogIn = (props) => {
   const [user, setUser] = useState({
@@ -28,20 +29,16 @@ const LogIn = (props) => {
       {redirect ? (
         <Navigate to="userProfile" replace={true} />
       ) : (
-        <div>
+        <div className="login">
+          <h1>Login</h1>
           <form onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="userName">User Name</label>
-              <input
-                type="text"
-                name="userName"
-                onChange={handleChange}
-                value={user.userName}
-              />
+              <label htmlFor="userName">User Name:</label>
+              <input placeholder="..." type="text" name="userName" onChange={handleChange} value={user.userName}/>
             </div>
             <div>
-              <label htmlFor="password">Password</label>
-              <input type="password" name="password" />
+              <label htmlFor="password">Password:</label>
+              <input placeholder="..."  type="password" name="password" />
             </div>
             <button>Log In</button>
           </form>
