@@ -35,7 +35,7 @@ const App = () => {
 
   const chargeBalance = (transaction) => {
     setBalance(
-      (prevBalance) => prevBalance - Number.parseFloat(transaction.amount).toFixed(2)
+      (prevBalance) => prevBalance + Number.parseFloat(transaction.amount).toFixed(2)
     );
   };
 
@@ -45,7 +45,7 @@ const App = () => {
       ...prevTransactions,
       debit: [...prevTransactions.debit, transaction],
     }));
-    chargeBalance(transaction); // update balance
+    chargeBalance(-Math.abs(transaction)); // update balance
   };
 
   // add credit transaction to list
@@ -60,7 +60,9 @@ const App = () => {
   const mockLogIn = (logInInfo) => {
     setUser({
       userName: logInInfo.userName,
-      memberSince: Date.now(), /* needs to be converted to YYYY-MM-DD */
+      memberSince: new Date()
+        .toISOString()
+        .split("T")[0] /* needs to be converted to YYYY-MM-DD */,
     });
   };
 
