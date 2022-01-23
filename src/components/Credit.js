@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../styles/transactions.css";
 import { nanoid } from "nanoid";
-import AccountBalance from "./AccountBalance";
 
 const Credit = (props) =>{
     const [formValues, setFormValues] = useState({
@@ -19,7 +18,7 @@ const Credit = (props) =>{
     const ren = props.credit.map(data => (
     <div className='transaction'>
         <p><strong>{data.description}</strong></p>
-        <p>{`Spent: $${data.amount}`}</p>
+        <p>{`Spent: $${Number(data.amount).toFixed(2)}`}</p>
         <p>{"Purchased on: "+ dateFix(data.date)}</p> 
     </div>
     ));

@@ -20,7 +20,7 @@ const Debit = (props) => {
       <p>
         <strong>{data.description}</strong>
       </p>
-      <p>{`Spent: $${data.amount}`}</p>
+      <p>{`Spent: $${Number(data.amount).toFixed(2)}`}</p>
       <p>{"Purchased on: " + dateFix(data.date)}</p>
     </div>
   ));

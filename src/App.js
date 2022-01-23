@@ -35,7 +35,7 @@ const App = () => {
 
   const chargeBalance = (transaction) => {
     setBalance(
-      (prevBalance) => prevBalance + Number.parseFloat(transaction.amount).toFixed(2)
+      (prevBalance) => prevBalance + Number((transaction).toFixed(2))
     );
   };
 
@@ -45,7 +45,7 @@ const App = () => {
       ...prevTransactions,
       debit: [...prevTransactions.debit, transaction],
     }));
-    chargeBalance(-Math.abs(transaction)); // update balance
+    chargeBalance(-Math.abs(transaction.amount)); // update balance
   };
 
   // add credit transaction to list
@@ -54,7 +54,7 @@ const App = () => {
       ...prevTransactions,
       credit: [...prevTransactions.credit, transaction],
     }));
-    chargeBalance(transaction); // update balance
+    chargeBalance(-Math.abs(transaction.amount)); // update balance
   };
 
   const mockLogIn = (logInInfo) => {
