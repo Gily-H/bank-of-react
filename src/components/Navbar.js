@@ -8,10 +8,18 @@ const Navbar = () => {
       <div className="logo-container">
         <i className="fas fa-landmark"></i>
         <h1 className="heading">Bank Of React</h1>
-        <Link className="accountLink link" to="/">Account</Link>
-        <Link className="debitLink link" to="/Debit">Debit</Link>
-        <Link className="creditLink link" to="/Credit">Credit</Link>
-        <Link className="aboutLink link" to="/">About Us</Link>
+        <Link className="accountLink link" to="/">
+          Account
+        </Link>
+        <Link className="debitLink link" to="/Debit">
+          Debit
+        </Link>
+        <Link className="creditLink link" to="/Credit">
+          Credit
+        </Link>
+        <Link className="aboutLink link" to="/login">
+          Login
+        </Link>
       </div>
     </nav>
   );
