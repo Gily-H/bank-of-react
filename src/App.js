@@ -61,7 +61,7 @@ const App = () => {
       userName: logInInfo.userName,
       memberSince: new Date()
         .toISOString()
-        .split("T")[0] /* needs to be converted to YYYY-MM-DD */,
+        .split("T")[0]
     });
   };
 

@@ -1,7 +1,9 @@
 import React from "react";
 import AccountBalance from "./AccountBalance";
+import "../styles/profile.css";
 
 const UserProfile = (props) => {
+
   return (
     <div>
       <h1>User Profile</h1>
