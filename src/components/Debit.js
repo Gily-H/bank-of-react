@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/transactions.css";
-import AccountBalance from "./AccountBalance";
 import { nanoid } from "nanoid";
 
 const Debit = (props) => {
@@ -47,9 +46,6 @@ const Debit = (props) => {
 
   return (
     <div className="transactionPage">
-      <div className="balance">
-        <AccountBalance balance={props.balance} />
-
         <div className="transactionForm">
             <h1>Add Transaction</h1>
             <form className="transaction-form" onSubmit={formSubmit}>
@@ -64,7 +60,6 @@ const Debit = (props) => {
                 <br/>
                 <button>Add Transaction</button>
             </form>
-      </div>
       </div>
         
         

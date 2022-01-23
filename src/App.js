@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import axios from "axios";
 import UserProfile from "./components/UserProfile";
 import LogIn from "./components/LogIn";
+import AccountBalance from "./components/AccountBalance";
 
 const App = () => {
   const [transactions, setTrans] = React.useState({
@@ -67,30 +68,34 @@ const App = () => {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path={"/"} element={<Home balance={balance} />} />
+        <Route path={"/"} element={<><Home/><AccountBalance balance={balance}/></>} />
         <Route path={"/login"} element={<LogIn mockLogIn={mockLogIn} />} />
         <Route
           path={"/login/userProfile"}
-          element={<UserProfile balance={balance} user={user} />}
+          element={<><UserProfile user={user}/><AccountBalance balance={balance}/></>}
         />
         <Route
           path={"/Debit"}
           element={
+          <>
+          <AccountBalance balance={balance}/>
             <Debit
               debit={transactions.debit}
               chargeDebit={chargeDebit}
-              balance={balance}
             />
+          </>
           }
         />
         <Route
           path={"/Credit"}
           element={
+            <>
+            <AccountBalance balance={balance}/>
             <Credit
               credit={transactions.credit}
               chargeCredit={chargeCredit}
-              balance={balance}
             />
+            </>
           }
         />
       </Routes>

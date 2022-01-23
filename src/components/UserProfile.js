@@ -1,5 +1,4 @@
 import React from "react";
-import AccountBalance from "./AccountBalance";
 
 const UserProfile = (props) => {
   return (
@@ -8,7 +7,6 @@ const UserProfile = (props) => {
 
       <div>Username: {props.user.userName}</div>
       <div>Member Since: {props.user.memberSince}</div>
-      <AccountBalance balance={props.balance} />
     </div>
   );
 };
