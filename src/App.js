@@ -5,6 +5,8 @@ import Debit from "./components/Debit";
 import Credit from "./components/Credit";
 import { Route, Routes } from "react-router-dom";
 import axios from "axios";
+import UserProfile from "./components/UserProfile";
+import LogIn from "./components/LogIn";
 
 const App = () => {
   const [transactions, setTrans] = React.useState({
@@ -54,11 +56,23 @@ const App = () => {
     chargeBalance(transaction); // update balance
   };
 
+  const mockLogIn = (logInInfo) => {
+    setUser({
+      userName: logInInfo.userName,
+      memberSince: Date.now(), /* needs to be converted to YYYY-MM-DD */
+    });
+  };
+
   return (
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path={"/"} element={<Home />} />
+        <Route path={"/"} element={<Home balance={balance} />} />
+        <Route path={"/login"} element={<LogIn mockLogIn={mockLogIn} />} />
+        <Route
+          path={"/login/userProfile"}
+          element={<UserProfile balance={balance} user={user} />}
+        />
         <Route
           path={"/Debit"}
           element={
